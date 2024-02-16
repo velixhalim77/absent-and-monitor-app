@@ -6,24 +6,24 @@ import axios from "axios";
 import {toast} from "react-toastify";
 import {useState} from "react";
 
-const AbsentComponent = ({ data }) => {
+const AbsentComponent = ({data}) => {
     const [showModal, setShowModal] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     const handleViewPhoto = (id) => {
-        axios.get(endpointEmployeeService+`absent/photo/${id}`,{
+        axios.get(endpointEmployeeService + `absent/photo/${id}`, {
             headers: {
                 'Authorization': cookies.get("accessToken"),
             },
         }).then((response) => {
             setSelectedPhoto(`data:image/jpeg;base64,${response.data.photo}`);
-        }).catch(err=>{
-            toast.error(err.message)
-        })
+        }).catch(err => {
+            toast.error(err.message);
+        });
         setShowModal(true);
     };
 
     const handleCloseModal = () => {
-        setSelectedPhoto(null)
+        setSelectedPhoto(null);
         setShowModal(false);
     };
     return (
@@ -53,7 +53,8 @@ const AbsentComponent = ({ data }) => {
                     <ModalTitle>View Photo</ModalTitle>
                 </ModalHeader>
                 <ModalBody>
-                    {selectedPhoto && <img src={selectedPhoto} alt="Absent Photo"  style={{ maxWidth: "100%", maxHeight: "100%" }} />}
+                    {selectedPhoto &&
+                        <img src={selectedPhoto} alt="Absent Photo" style={{maxWidth: "100%", maxHeight: "100%"}}/>}
                 </ModalBody>
                 <ModalFooter>
                     <Button variant="secondary" onClick={handleCloseModal}>
@@ -65,4 +66,4 @@ const AbsentComponent = ({ data }) => {
     );
 };
 
-export default AbsentComponent
+export default AbsentComponent;

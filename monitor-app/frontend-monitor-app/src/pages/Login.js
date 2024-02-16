@@ -3,28 +3,28 @@ import {useState} from "react";
 import {Form, FormControl, FormGroup, FormLabel, Button} from "react-bootstrap";
 import axios from "axios";
 import {endpointUserService} from "../commons/Endpoint";
-import cookies from "js-cookie"
+import cookies from "js-cookie";
 import HeaderComponent from "../components/commons/HeaderComponent";
 
 const Login = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const headerTemplate = {
-        goBackString:null,
-        titleTemplate:"Login"
-    }
+        goBackString: null,
+        titleTemplate: "Login"
+    };
 
     const navigate = useNavigate();
 
-    const clickLogin = (e) =>{
+    const clickLogin = (e) => {
         e.preventDefault();
-        axios.post(endpointUserService+"auth/login", {username, password}).then((response) => {
+        axios.post(endpointUserService + "auth/login", {username, password}).then((response) => {
             cookies.set('accessToken', response.data.token);
-            navigate("/home")
-        }).catch(err=>{
-            console.error(err)
-        })
-    }
+            navigate("/home");
+        }).catch(err => {
+            console.error(err);
+        });
+    };
 
     return (
         <section>
@@ -58,7 +58,7 @@ const Login = () => {
                 </Form>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Login;

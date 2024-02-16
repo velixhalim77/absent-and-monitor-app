@@ -20,13 +20,13 @@ const EmployeeCreate = () => {
     const [joinDate, setJoinDate] = useState(new Date());
     const navigate = useNavigate();
     const headerTemplate = {
-        goBackString:"home",
-        titleTemplate:"Monitoring App"
-    }
+        goBackString: "home",
+        titleTemplate: "Monitoring App"
+    };
 
     const goBack = () => {
-        navigate("/home")
-    }
+        navigate("/home");
+    };
 
     const createEmployee = (e) => {
         e.preventDefault();
@@ -53,15 +53,15 @@ const EmployeeCreate = () => {
     useEffect(() => {
         const isTokenValid = verifyToken();
         const isUserValid = verifyUser();
-        if(!isUserValid){
-            toast.warn("you don't have permision to access")
+        if (!isUserValid) {
+            toast.warn("you don't have permision to access");
             navigate("/");
         }
         if (!isTokenValid) {
-            toast.warn("expire time login! please login again")
+            toast.warn("expire time login! please login again");
             navigate("/");
         }
-    },[])
+    }, []);
 
     return (
         <div>
@@ -119,7 +119,7 @@ const EmployeeCreate = () => {
                         <DatePicker selected={joinDate} onChange={(date) => setJoinDate(date)} dateFormat="yyyy-MM-dd"/>
                     </FormGroup>
 
-                    <Button variant="primary" type="submit" className="mt-2" style={{ marginRight: '10px' }}>
+                    <Button variant="primary" type="submit" className="mt-2" style={{marginRight: '10px'}}>
                         Submit
                     </Button>
                     <Button variant="danger" onClick={goBack} className="mt-2">

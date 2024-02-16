@@ -8,14 +8,15 @@ import {useNavigate} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import HeaderComponent from "../components/commons/HeaderComponent";
+
 const Home = () => {
     const [photo, setPhoto] = useState('');
-    const [decodeToken, setDecodeToken] = useState({})
+    const [decodeToken, setDecodeToken] = useState({});
     const navigate = useNavigate();
     const headerTemplate = {
-        goBackString:"/",
-        titleTemplate:"Absent App"
-    }
+        goBackString: "/",
+        titleTemplate: "Absent App"
+    };
     const absentClick = () => {
         const formData = new FormData();
         formData.append('photo', photo);
@@ -71,7 +72,7 @@ const Home = () => {
                         Absent Here
                     </Button>
                 </Form>
-                <ToastContainer />
+                <ToastContainer/>
             </div>
         </div>
     );

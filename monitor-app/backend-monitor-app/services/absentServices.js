@@ -40,7 +40,7 @@ exports.loadAbsentByEmployeeId = (req, res) => {
 };
 
 exports.loadPhotoById = (req, res) => {
-    const queryString = 'SELECT photo FROM absent WHERE id = ?'
+    const queryString = 'SELECT photo FROM absent WHERE id = ?';
     connection.query(queryString, [req.params.id], async (err, result) => {
         if (err) {
             console.error('Error load absent :', err);
@@ -49,4 +49,4 @@ exports.loadPhotoById = (req, res) => {
         }
         res.status(200).json(result[0]);
     });
-}
+};

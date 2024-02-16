@@ -23,9 +23,9 @@ const EmployeeDetail = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const headerTemplate = {
-        goBackString:"home",
-        titleTemplate:"Monitoring App"
-    }
+        goBackString: "home",
+        titleTemplate: "Monitoring App"
+    };
     const goBack = () => {
         navigate("/home");
     };

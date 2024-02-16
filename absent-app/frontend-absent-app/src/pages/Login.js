@@ -11,9 +11,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const headerTemplate = {
-        goBackString:null,
-        titleTemplate:"Login"
-    }
+        goBackString: null,
+        titleTemplate: "Login"
+    };
 
     const clickLogin = (e) => {
         e.preventDefault();

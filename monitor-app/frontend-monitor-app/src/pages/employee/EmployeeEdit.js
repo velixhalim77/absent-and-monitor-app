@@ -22,9 +22,9 @@ const EmployeeEdit = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const headerTemplate = {
-        goBackString:"home",
-        titleTemplate:"Monitoring App"
-    }
+        goBackString: "home",
+        titleTemplate: "Monitoring App"
+    };
     const goBack = () => {
         navigate("/home");
     };
@@ -73,12 +73,12 @@ const EmployeeEdit = () => {
     useEffect(() => {
         const isTokenValid = verifyToken();
         const isUserValid = verifyUser();
-        if(!isUserValid){
-            toast.warn("you don't have permision to access")
+        if (!isUserValid) {
+            toast.warn("you don't have permision to access");
             navigate("/");
         }
         if (!isTokenValid) {
-            toast.warn("expire time login! please login again")
+            toast.warn("expire time login! please login again");
             navigate("/");
         }
         getEmployeeDetail();

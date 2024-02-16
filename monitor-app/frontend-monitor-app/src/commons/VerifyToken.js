@@ -8,4 +8,4 @@ const verifyToken = () => {
     return decodeToken.exp >= currentTime;
 };
 
-export default verifyToken
+export default verifyToken;

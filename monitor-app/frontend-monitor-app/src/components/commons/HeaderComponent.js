@@ -4,28 +4,28 @@ import cookies from "js-cookie";
 import {ArrowLeft} from "react-bootstrap-icons";
 
 const HeaderComponent = ({data}) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const handleLogOut = () => {
-        cookies.remove("accessToken")
-        navigate("/")
-    }
+        cookies.remove("accessToken");
+        navigate("/");
+    };
     const goBack = () => {
-        if(data.goBackString=="/"){
-            handleLogOut()
-        }else{
-            navigate(`/${data.goBackString}`)
+        if (data.goBackString == "/") {
+            handleLogOut();
+        } else {
+            navigate(`/${data.goBackString}`);
         }
-    }
+    };
     return (
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
                 {data.goBackString && (
                     <Navbar.Brand onClick={goBack}>
-                        <ArrowLeft />
+                        <ArrowLeft/>
                     </Navbar.Brand>
                 )}
                 <NavbarBrand>{data.titleTemplate}</NavbarBrand>
-                <NavbarToggle aria-controls="responsive-navbar-nav" />
+                <NavbarToggle aria-controls="responsive-navbar-nav"/>
                 <NavbarCollapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                     </Nav>

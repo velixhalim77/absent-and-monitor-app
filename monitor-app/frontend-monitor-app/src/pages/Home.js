@@ -16,9 +16,9 @@ const Home = () => {
     const [employeeWantToDelete, setEmployeeWantToDelete] = useState({});
     const navigate = useNavigate();
     const headerTemplate = {
-        goBackString:"/",
-        titleTemplate:"Monitoring App"
-    }
+        goBackString: "/",
+        titleTemplate: "Monitoring App"
+    };
 
     const handleCreate = () => {
         navigate("/create");
@@ -72,12 +72,12 @@ const Home = () => {
     useEffect(() => {
         const isTokenValid = verifyToken();
         const isUserValid = verifyUser();
-        if(!isUserValid){
-            toast.warn("you don't have permision to access")
+        if (!isUserValid) {
+            toast.warn("you don't have permision to access");
             navigate("/");
         }
         if (!isTokenValid) {
-            toast.warn("expire time login! please login again")
+            toast.warn("expire time login! please login again");
             navigate("/");
         }
         getEmployeeData();
@@ -107,7 +107,8 @@ const Home = () => {
                                         onClick={() => handleDetail(employee.id)}>Detail</Button>{' '}
                                 <Button variant="warning" size="sm"
                                         onClick={() => handleEdit(employee.id)}>Edit</Button>{' '}
-                                <Button variant="danger" size="sm" onClick={() => handleDelete(employee.id)}>Delete</Button>
+                                <Button variant="danger" size="sm"
+                                        onClick={() => handleDelete(employee.id)}>Delete</Button>
                             </td>
                         </tr>
                     ))}
