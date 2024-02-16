@@ -2,7 +2,7 @@
 
 ## Setup Database
 please configure the databases first.
-make two database for employee and auth. 
+make two databases for employee and auth.  (employee_db & auth_db)
 in both project backend there are two dump-data or example-table
 you can use any of thoses to generate mysql database. for exaple-table is without data and for dump-data there already some data.
 
