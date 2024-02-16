@@ -1,6 +1,6 @@
 import {Button, Form, FormControl, FormGroup, FormLabel} from "react-bootstrap";
 import axios from "axios";
-import {endpointEmployeeService, endpointUserService} from "../commons/Endpoint";
+import {endpointEmployeeService} from "../commons/Endpoint";
 import React, {useEffect, useState} from "react";
 import cookies from "js-cookie";
 import {jwtDecode} from "jwt-decode";

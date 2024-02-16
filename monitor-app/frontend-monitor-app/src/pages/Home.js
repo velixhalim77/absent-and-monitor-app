@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {endpointEmployeeService} from "../commons/Endpoint";
 import cookies from "js-cookie";
-import {jwtDecode} from "jwt-decode";
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 import verifyToken from "../commons/VerifyToken";

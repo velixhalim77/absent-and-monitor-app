@@ -1,4 +1,4 @@
-import {Button, Container, Nav, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle} from "react-bootstrap";
+import {Container, Nav, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import cookies from "js-cookie";
 import {ArrowLeft} from "react-bootstrap-icons";
@@ -10,7 +10,7 @@ const HeaderComponent = ({data}) => {
         navigate("/");
     };
     const goBack = () => {
-        if (data.goBackString == "/") {
+        if (data.goBackString === "/") {
             handleLogOut();
         } else {
             navigate(`/${data.goBackString}`);

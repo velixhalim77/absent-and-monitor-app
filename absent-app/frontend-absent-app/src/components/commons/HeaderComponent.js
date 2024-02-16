@@ -10,7 +10,7 @@ const HeaderComponent = ({data}) => {
         navigate("/");
     };
     const goBack = () => {
-        if (data.goBackString == "/") {
+        if (data.goBackString === "/") {
             handleLogOut();
         } else {
             navigate(`/${data.goBackString}`);
@@ -20,9 +20,9 @@ const HeaderComponent = ({data}) => {
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
                 {data.goBackString && (
-                    <Navbar.Brand onClick={goBack}>
+                    <NavbarBrand onClick={goBack}>
                         <ArrowLeft/>
-                    </Navbar.Brand>
+                    </NavbarBrand>
                 )}
                 <NavbarBrand>{data.titleTemplate}</NavbarBrand>
                 <NavbarToggle aria-controls="responsive-navbar-nav"/>
